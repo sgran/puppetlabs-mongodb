@@ -45,6 +45,11 @@ Puppet::Type.newtype(:mongodb_user) do
     end
   end
 
+  newproperty(:password) do
+    desc "The cleartext password hash of the user."
+    newvalue(/^\w+$/)
+  end
+
   newproperty(:password_hash) do
     desc "The password hash of the user. Use mongodb_password() for creating hash."
     defaultto do
