@@ -25,6 +25,6 @@ define mongodb::user (
     password      => $password,
     password_hash => $hash,
     database      => $database,
-    roles         => $roles
+    roles         => $roles,
   }
 }

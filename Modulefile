@@ -1,11 +1,11 @@
-name 'puppetlabs-mongodb'
+name 'piksel-mongodb'
 version '0.8.0'
-source 'git@github.com:puppetlabs/puppetlabs-mongodb.git'
-author 'puppetlabs'
+source 'git@gitlab.piksel.com:puppet_modules/mongodb.git'
+author 'piksel'
 license 'Apache License Version 2.0'
 summary 'mongodb puppet module'
-description '10gen mongodb puppet module'
-project_page 'https://github.com/puppetlabs/puppetlabs-mongodb'
+description 'mongodb puppet module'
+project_page 'https://gitlab.piksel.com/puppet_modules/mongodb'
 
 ## Add dependencies, if any:
 dependency 'puppetlabs/apt', '>= 1.0.0'
