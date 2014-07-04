@@ -76,7 +76,7 @@ Puppet::Type.type(:mongodb_user).provide(:mongodb) do
 
   def roles
     if version >= 260
-      JSON.load(mongo('admin', '--quiet', '--eval', "printjson(db.system.users.findOne({user:\"#{@resource[:name]}\"})[\"roles\"])").strip).collect{ |x| x['role'] if x['db'] == @resource[:database] }
+      JSON.load(mongo('admin', '--quiet', '--eval', "printjson(db.system.users.findOne({user:\"#{@resource[:name]}\"})[\"roles\"])").strip).collect{ |x| x['role'] if x['db'] == @resource[:database] }.sort
     elsif version >= 240
       mongo(@resource[:database], '--quiet', '--eval', "db.system.users.findOne({user:\"#{@resource[:name]}\"})[\"roles\"]").strip.split(",").sort
     end
